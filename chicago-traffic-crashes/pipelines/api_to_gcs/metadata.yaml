@@ -2,18 +2,100 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
+  downstream_blocks:
+  - vehicles_to_gcs_partitioned_parquet
+  - summary_overview_for_load_vehicles
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_vehicles
+  retry_config: {}
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: load_vehicles
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
   downstream_blocks: []
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: load_crashes
+  name: vehicles_to_gcs_partitioned_parquet
   retry_config: null
-  status: not_executed
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - load_vehicles
+  uuid: vehicles_to_gcs_partitioned_parquet
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - crashes_to_gcs_partitioned_parquet
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_crash
+  retry_config: null
+  status: executed
   timeout: null
   type: data_loader
   upstream_blocks: []
-  uuid: load_crashes
+  uuid: load_crash
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: crashes_to_gcs_partitioned_parquet
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - load_crash
+  uuid: crashes_to_gcs_partitioned_parquet
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - people_to_gcs_partitioned_parquet
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_people
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: load_people
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: people_to_gcs_partitioned_parquet
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - load_people
+  uuid: people_to_gcs_partitioned_parquet
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
@@ -38,5 +120,27 @@ tags: []
 type: python
 uuid: api_to_gcs
 variables_dir: /home/src/mage_data/chicago-traffic-crashes
-widgets: []
-
+widgets:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    chart_type: table
+    group_by:
+    - exceed_speed_limit_i
+    height: 3000
+    index: stats
+    x: headers
+    y: rows
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: summary overview for load_vehicles
+  retry_config: null
+  status: failed
+  timeout: null
+  type: chart
+  upstream_blocks:
+  - load_vehicles
+  uuid: summary_overview_for_load_vehicles

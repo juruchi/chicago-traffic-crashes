@@ -55,6 +55,7 @@ project_uuid: f5d90863fb1f4ea1b4fd8ac001295c20
 help_improve_mage: false
 
 gcp_cloud_run_config:
-  path_to_credentials_json_file: "../keys/my-creds.json"
-  project_id: ${TF_var_project_id}
+  path_to_credentials_json_file: "/home/src/keys/my-creds.json"
+  project_id: chicago-traffic-crashes-418100
   timeout_seconds: 600
+
