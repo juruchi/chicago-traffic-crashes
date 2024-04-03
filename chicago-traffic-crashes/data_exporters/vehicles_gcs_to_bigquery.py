@@ -20,7 +20,7 @@ def export_data(*args, **kwargs):
 
     project_id = os.environ.get('TF_VAR_project_id')
     dataset_id = 'processed_data'
-    gcs_folder = 'people'
+    gcs_folder = 'vehicles'
     table_id = gcs_folder+'_external'
 
 

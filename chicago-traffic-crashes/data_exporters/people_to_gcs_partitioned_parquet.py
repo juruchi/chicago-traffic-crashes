@@ -14,7 +14,7 @@ if 'data_exporter' not in globals():
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/src/keys/my-creds.json"
 
-project_id = os.environ.get('project_id')
+project_id = os.environ.get('TF_VAR_project_id')
 bucket_name = project_id + "-traffic-crash-data"
 table_name = "people"
 

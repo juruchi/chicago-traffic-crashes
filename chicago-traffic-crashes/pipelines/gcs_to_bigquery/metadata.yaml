@@ -16,43 +16,41 @@ blocks:
   language: python
   name: people_gcs_to_bigquery
   retry_config: null
-  status: failed
+  status: updated
   timeout: null
   type: data_exporter
   upstream_blocks: []
   uuid: people_gcs_to_bigquery
 - all_upstream_blocks_executed: true
-  color: teal
+  color: null
   configuration: {}
   downstream_blocks: []
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: gcs_bigquery
+  name: vehicles_gcs_to_bigquery
   retry_config: null
-  status: not_executed
+  status: executed
   timeout: null
-  type: custom
+  type: data_exporter
   upstream_blocks: []
-  uuid: gcs_bigquery
+  uuid: vehicles_gcs_to_bigquery
 - all_upstream_blocks_executed: true
   color: null
-  configuration:
-    file_source:
-      path: data_loaders/load_people_gcs.py
+  configuration: {}
   downstream_blocks: []
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: load_people_gcs
+  name: crashes_gcs_to_bigquery
   retry_config: null
-  status: not_executed
+  status: executed
   timeout: null
-  type: data_loader
+  type: data_exporter
   upstream_blocks: []
-  uuid: load_people_gcs
+  uuid: crashes_gcs_to_bigquery
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
