@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: staging
+    database: chicago-traffic-crashes-418100
+    schema: processed_data
+      
+    tables:
+      - name: vehicles_partition
+      - name: crashes_partition
+      - name: people_partition

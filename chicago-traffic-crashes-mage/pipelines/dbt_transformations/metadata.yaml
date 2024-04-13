@@ -1,0 +1,107 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_profile_target: dev
+    dbt_profiles_file_path: dbt/traffic_crashes_dbt/profiles.yml
+    dbt_project_name: dbt/traffic_crashes_dbt
+    file_path: dbt/traffic_crashes_dbt/models/core/month_crashes.sql
+    file_source:
+      path: dbt/traffic_crashes_dbt/models/core/month_crashes.sql
+      project_path: dbt/traffic_crashes_dbt
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: month_crashes
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/traffic_crashes_dbt/models/core/month_crashes
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/traffic_crashes_dbt
+    file_path: dbt/traffic_crashes_dbt/models/core/pedpedal_crash_location.sql
+    file_source:
+      path: dbt/traffic_crashes_dbt/models/core/pedpedal_crash_location.sql
+      project_path: dbt/traffic_crashes_dbt
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: pedpedal_crash_location
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/traffic_crashes_dbt/models/core/pedpedal_crash_location
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/traffic_crashes_dbt
+    file_path: dbt/traffic_crashes_dbt/models/core/pedpedal_crash_type.sql
+    file_source:
+      path: dbt/traffic_crashes_dbt/models/core/pedpedal_crash_type.sql
+      project_path: dbt/traffic_crashes_dbt
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: pedpedal_crash_type
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/traffic_crashes_dbt/models/core/pedpedal_crash_type
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/traffic_crashes_dbt
+    file_path: dbt/traffic_crashes_dbt/models/core/primary_cause.sql
+    file_source:
+      path: dbt/traffic_crashes_dbt/models/core/primary_cause.sql
+      project_path: dbt/traffic_crashes_dbt
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: primary_cause
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/traffic_crashes_dbt/models/core/primary_cause
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-04-10 01:10:55.807857+00:00'
+data_integration: null
+description: Run DBT models needed for report
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: dbt transformations
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: dbt_transformations
+variables_dir: /home/src/mage_data/chicago-traffic-crashes-mage
+widgets: []

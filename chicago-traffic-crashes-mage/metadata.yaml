@@ -59,3 +59,9 @@ gcp_cloud_run_config:
   project_id: chicago-traffic-crashes-418100
   timeout_seconds: 600
 
+features:
+  compute_management: false
+  dbt_v2: true
+  display_local_timezone: false
+  project_platform: false
+pipelines:

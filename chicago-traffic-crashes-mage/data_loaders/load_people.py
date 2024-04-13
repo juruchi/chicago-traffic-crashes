@@ -10,7 +10,7 @@ if 'test' not in globals():
 @data_loader
 def load_data_from_api(*args, **kwargs):
 
-    url = 'https://data.cityofchicago.org/resource/u6pd-qa9d.csv?$limit=10000'
+    url = 'https://data.cityofchicago.org/resource/u6pd-qa9d.csv?$limit=2000000'
     response = requests.get(url)
 
     people_dtypes = {

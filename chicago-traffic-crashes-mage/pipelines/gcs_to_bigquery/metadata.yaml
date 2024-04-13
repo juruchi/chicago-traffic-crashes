@@ -16,7 +16,7 @@ blocks:
   language: python
   name: people_gcs_to_bigquery
   retry_config: null
-  status: updated
+  status: executed
   timeout: null
   type: data_exporter
   upstream_blocks: []
@@ -73,5 +73,5 @@ spark_config: {}
 tags: []
 type: python
 uuid: gcs_to_bigquery
-variables_dir: /home/src/mage_data/chicago-traffic-crashes
+variables_dir: /home/src/mage_data/chicago-traffic-crashes-mage
 widgets: []
