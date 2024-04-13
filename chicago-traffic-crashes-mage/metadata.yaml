@@ -56,7 +56,7 @@ help_improve_mage: false
 
 gcp_cloud_run_config:
   path_to_credentials_json_file: "/home/src/keys/my-creds.json"
-  project_id: chicago-traffic-crashes-418100
+  project_id: {{ env_var('TF_VAR_project_id')}}
   timeout_seconds: 600
 
 features:
