@@ -63,15 +63,3 @@ variable "ssl" {
   type        = bool
   default     = false
 }
-
-# variable "gcs_bucket_name_suffix" {
-#   type = string
-#   description = "Google Cloud Storage Bucket"
-#   default = "traffic-crash-data"
-# }
-
-# variable "bq_dataset_name" {
-#   type = string
-#   description = "BigQuery Dataset"
-#   default = "processed_data"
-# }

@@ -262,31 +262,3 @@ output "service_ip" {
 # output "docs_service_ip" {
 #   value = google_compute_global_address.docs_ip.address
 # }
-
-
-# # #############################################
-# # #          GCP Bucket & Big Query           #
-# # #############################################
-# # Create GCS Bucket
-# resource "google_storage_bucket" "storagebucket" {
-#   name          = format("%s-%s", var.project_id, var.gcs_bucket_name_suffix)
-#   location      = var.region
-#   force_destroy = true
-
-
-#   lifecycle_rule {
-#     condition {
-#       age = 1
-#     }
-#     action {
-#       type = "AbortIncompleteMultipartUpload"
-#     }
-#   }
-# }
-
-# # Create BigQuery Dataset
-# resource "google_bigquery_dataset" "bigquerydataset" {
-#   dataset_id = var.bq_dataset_name
-#   location   = var.region
-#   delete_contents_on_destroy = true
-# }
