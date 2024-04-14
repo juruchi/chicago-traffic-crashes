@@ -12,9 +12,9 @@ import os
 if 'data_exporter' not in globals():
     from mage_ai.data_preparation.decorators import data_exporter
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/src/keys/my-creds.json"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv('path_to_keyfile')
 
-project_id = os.environ.get('TF_VAR_project_id')
+project_id = os.getenv('TF_VAR_project_id')
 bucket_name = project_id + "-traffic-crash-data"
 table_name = "vehicles"
 

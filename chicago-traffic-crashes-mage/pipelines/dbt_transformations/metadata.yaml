@@ -24,6 +24,8 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration:
+    dbt_profile_target: dev
+    dbt_profiles_file_path: dbt/traffic_crashes_dbt/profiles.yml
     dbt_project_name: dbt/traffic_crashes_dbt
     file_path: dbt/traffic_crashes_dbt/models/core/pedpedal_crash_location.sql
     file_source:
@@ -44,6 +46,8 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration:
+    dbt_profile_target: dev
+    dbt_profiles_file_path: dbt/traffic_crashes_dbt/profiles.yml
     dbt_project_name: dbt/traffic_crashes_dbt
     file_path: dbt/traffic_crashes_dbt/models/core/pedpedal_crash_type.sql
     file_source:
@@ -64,6 +68,8 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration:
+    dbt_profile_target: dev
+    dbt_profiles_file_path: dbt/traffic_crashes_dbt/profiles.yml
     dbt_project_name: dbt/traffic_crashes_dbt
     file_path: dbt/traffic_crashes_dbt/models/core/primary_cause.sql
     file_source:

@@ -26,7 +26,7 @@ blocks:
   language: python
   name: vehicles_to_gcs_partitioned_parquet
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_exporter
   upstream_blocks:
@@ -58,7 +58,7 @@ blocks:
   language: python
   name: crashes_to_gcs_partitioned_parquet
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_exporter
   upstream_blocks:
@@ -90,7 +90,7 @@ blocks:
   language: python
   name: people_to_gcs_partitioned_parquet
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_exporter
   upstream_blocks:

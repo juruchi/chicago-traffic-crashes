@@ -55,7 +55,7 @@ project_uuid: f5d90863fb1f4ea1b4fd8ac001295c20
 help_improve_mage: false
 
 gcp_cloud_run_config:
-  path_to_credentials_json_file: "/home/src/keys/my-creds.json"
+  path_to_credentials_json_file: {{ env_var('path_to_keyfile')}}
   project_id: {{ env_var('TF_VAR_project_id')}}
   timeout_seconds: 600
 

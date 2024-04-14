@@ -15,10 +15,10 @@ def export_data(*args, **kwargs):
     from google.cloud import bigquery
     import os
 
-    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/src/keys/my-creds.json"
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv('path_to_keyfile')
     client = bigquery.Client()
 
-    project_id = os.environ.get('TF_VAR_project_id')
+    project_id = os.getenv('TF_VAR_project_id')
     dataset_id = 'processed_data'
     gcs_folder = 'people'
     table_id = gcs_folder+'_external'
