@@ -50,7 +50,6 @@ variable "database_password" {
 variable "docker_image" {
   type        = string
   description = "The docker image to deploy to Cloud Run."
-  default     = "mageai/mageai:latest"
 }
 
 variable "domain" {
@@ -65,14 +64,14 @@ variable "ssl" {
   default     = false
 }
 
-variable "gcs_bucket_name_suffix" {
-  type = string
-  description = "Google Cloud Storage Bucket"
-  default = "traffic-crash-data"
-}
+# variable "gcs_bucket_name_suffix" {
+#   type = string
+#   description = "Google Cloud Storage Bucket"
+#   default = "traffic-crash-data"
+# }
 
-variable "bq_dataset_name" {
-  type = string
-  description = "BigQuery Dataset"
-  default = "processed_data"
-}
+# variable "bq_dataset_name" {
+#   type = string
+#   description = "BigQuery Dataset"
+#   default = "processed_data"
+# }

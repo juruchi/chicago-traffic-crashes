@@ -111,6 +111,18 @@ resource "google_cloud_run_service" "run_service" {
         #   mount_path = "/secrets/bigquery"
         #   name       = "secret-bigquery-key"
         # }
+        env {
+          name = "path_to_keyfile"
+          value = "/secrets/bigquery/bigquery_credentials"
+        }
+        volume_mounts {
+          name       = "secrets-bigquery_credentials"
+          mount_path = "/secrets/bigquery"
+        }
+        env {
+          name = "TF_VAR_project_id"
+          value = var.project_id
+        }
       }
       # volumes {
       #   name = "secret-bigquery-key"
@@ -122,6 +134,16 @@ resource "google_cloud_run_service" "run_service" {
       #     }
       #   }
       # }
+      volumes {
+        name = "secrets-bigquery_credentials"
+        secret {
+          secret_name  = "bigquery_credentials"
+          items {
+            key  = "latest"
+            path = "bigquery_credentials"
+          }
+        }
+      }
     }
 
     metadata {
@@ -242,29 +264,29 @@ output "service_ip" {
 # }
 
 
-# #############################################
-# #          GCP Bucket & Big Query           #
-# #############################################
-# Create GCS Bucket
-resource "google_storage_bucket" "storagebucket" {
-  name          = format("%s-%s", var.project_id, var.gcs_bucket_name_suffix)
-  location      = var.region
-  force_destroy = true
+# # #############################################
+# # #          GCP Bucket & Big Query           #
+# # #############################################
+# # Create GCS Bucket
+# resource "google_storage_bucket" "storagebucket" {
+#   name          = format("%s-%s", var.project_id, var.gcs_bucket_name_suffix)
+#   location      = var.region
+#   force_destroy = true
 
 
-  lifecycle_rule {
-    condition {
-      age = 1
-    }
-    action {
-      type = "AbortIncompleteMultipartUpload"
-    }
-  }
-}
+#   lifecycle_rule {
+#     condition {
+#       age = 1
+#     }
+#     action {
+#       type = "AbortIncompleteMultipartUpload"
+#     }
+#   }
+# }
 
-# Create BigQuery Dataset
-resource "google_bigquery_dataset" "bigquerydataset" {
-  dataset_id = var.bq_dataset_name
-  location   = var.region
-  delete_contents_on_destroy = true
-}
+# # Create BigQuery Dataset
+# resource "google_bigquery_dataset" "bigquerydataset" {
+#   dataset_id = var.bq_dataset_name
+#   location   = var.region
+#   delete_contents_on_destroy = true
+# }
