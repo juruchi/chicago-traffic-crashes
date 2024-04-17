@@ -19,7 +19,8 @@ blocks:
 - all_upstream_blocks_executed: false
   color: null
   configuration: {}
-  downstream_blocks: []
+  downstream_blocks:
+  - trigger_gcs_to__bigquery
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -51,7 +52,8 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
-  downstream_blocks: []
+  downstream_blocks:
+  - trigger_gcs_to__bigquery
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -83,7 +85,8 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
-  downstream_blocks: []
+  downstream_blocks:
+  - trigger_gcs_to__bigquery
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -96,6 +99,24 @@ blocks:
   upstream_blocks:
   - load_people
   uuid: people_to_gcs_partitioned_parquet
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: trigger_gcs_to-_bigquery
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - people_to_gcs_partitioned_parquet
+  - vehicles_to_gcs_partitioned_parquet
+  - crashes_to_gcs_partitioned_parquet
+  uuid: trigger_gcs_to__bigquery
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}

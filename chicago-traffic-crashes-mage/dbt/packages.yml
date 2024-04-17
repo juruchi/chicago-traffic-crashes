@@ -1,0 +1,2 @@
+packages:
+  - local: ./traffic_crashes_dbt

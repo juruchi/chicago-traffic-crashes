@@ -1,0 +1,5 @@
+base:
+  target: dev
+  outputs:
+    dev:
+      <output_config>

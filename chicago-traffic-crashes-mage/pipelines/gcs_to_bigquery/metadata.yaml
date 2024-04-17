@@ -9,7 +9,8 @@ blocks:
     export_write_policy: append
     limit: 1000
     use_raw_sql: true
-  downstream_blocks: []
+  downstream_blocks:
+  - trigger_dbt
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -24,7 +25,8 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
-  downstream_blocks: []
+  downstream_blocks:
+  - trigger_dbt
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -39,7 +41,8 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
-  downstream_blocks: []
+  downstream_blocks:
+  - trigger_dbt
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -51,6 +54,24 @@ blocks:
   type: data_exporter
   upstream_blocks: []
   uuid: crashes_gcs_to_bigquery
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: trigger_dbt
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - crashes_gcs_to_bigquery
+  - people_gcs_to_bigquery
+  - vehicles_gcs_to_bigquery
+  uuid: trigger_dbt
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
